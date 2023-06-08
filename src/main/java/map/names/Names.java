@@ -42,7 +42,6 @@ public class Names {
         }
 
         return hashMap;
-
     }
 
     private static Map<String, Integer> readStatsFromFile(Path csvPath) {

@@ -7,3 +7,7 @@ build
 .vscode
 .devcontainer
 /bin
+
+.classpath
+.project
+.settings

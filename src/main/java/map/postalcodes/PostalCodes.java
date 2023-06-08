@@ -1,4 +1,4 @@
-package map.postinumerot;
+package map.postalcodes;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
