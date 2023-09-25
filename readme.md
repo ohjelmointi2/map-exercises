@@ -107,7 +107,8 @@ Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan k�
     "74705": "PAKETTIAUTOMAATTI",
     "74704": "SMARTPOST",
     "44884": "SMART POST"
-}```
+}
+```
 
 Java-ohjelmassa Map-tietorakenne soveltuu erinomaisesti yllä esitettyjen avain-arvo-parien käsittelemiseen. Tässä tehtävässä keskitymme postinumeroaineiston käsittelyyn, joka on tallennettu [JSON-muotoiseen tiedostoon](./data/postcode_map_light.json).
 
