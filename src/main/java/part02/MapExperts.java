@@ -25,10 +25,7 @@ public class MapExperts {
      * contains only letters.
      */
     public Map<Character, Integer> countLetters(String word) {
-        return word.chars()
-                .mapToObj(c -> (char) c)
-                .collect(
-                        java.util.stream.Collectors.groupingBy(c -> c, java.util.stream.Collectors.summingInt(c -> 1)));
+        return null;
     }
 
     /**
@@ -40,7 +37,7 @@ public class MapExperts {
      * 1 -> "one", 2 -> "two", 3 -> "three".
      */
     public Map<Integer, String> reverseMap(Map<String, Integer> map) {
-        return map.entrySet().stream().collect(java.util.stream.Collectors.toMap(e -> e.getValue(), e -> e.getKey()));
+        return null;
     }
 
     /**
@@ -58,6 +55,6 @@ public class MapExperts {
      * "SOF004AS2A" -> Course("SOF004AS2A", "Python-ohjelmointi")
      */
     public Map<String, Course> createMapFromList(List<Course> list) {
-        return list.stream().collect(java.util.stream.Collectors.toMap(course -> course.code(), course -> course));
+        return null;
     }
 }

@@ -10,7 +10,7 @@ public class PostalCodesMain {
      * classes if needed.
      */
     public static void main(String[] args) {
-        // a Map from postal code ("00100") to postal district name ("HELSINKI").
+        // a Map from postal codes to postal district names
         Map<String, String> postalCodes = PostalCodes.readPostalCodes();
 
         Scanner scanner = new Scanner(System.in);
