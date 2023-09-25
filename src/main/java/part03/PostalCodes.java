@@ -1,5 +1,6 @@
 package part03;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -16,7 +17,7 @@ import com.google.gson.reflect.TypeToken;
 public class PostalCodes {
 
     // The path to the JSON file containing the postal codes.
-    private static final Path postalCodesJSON = Path.of("data", "postcode_map_light.json");
+    private static final Path jsonFilePath = Path.of("data", "postcode_map_light.json");
 
     /**
      * Reads the postal codes from the JSON file and returns them as a Map from
@@ -31,8 +32,8 @@ public class PostalCodes {
         };
 
         try {
-            String jsonString = Files.readString(postalCodesJSON, StandardCharsets.UTF_8);
-            return gson.fromJson(jsonString, mapType);
+            BufferedReader reader = Files.newBufferedReader(jsonFilePath, StandardCharsets.UTF_8);
+            return gson.fromJson(reader, mapType);
 
         } catch (IOException e) {
             // If there's an exception reading the file, we can't continue.
