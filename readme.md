@@ -9,10 +9,9 @@ Tämän harjoitustehtäväpaketin myötä opit hyödyntämään Map-tietorakenne
 > Using Maps to Store Key Value Pairs. Oracle. https://dev.java/learn/api/collections-framework/maps/
 
 Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valmiiksi kirjoitettuja testejä.
-Ennen oman toteutuksen aloittamista varmista, että saat suoritettua tehtäväpohjassa valmiina olevan koodin ongelmitta run-komennolla:
 
 
-## Tehtävä 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) (perusteet, 40 % pisteistä)
+## Tehtävä 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) *(perusteet, 40 % pisteistä)*
 
 Tässä tehtävässä harjoittelemme uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
 
@@ -25,14 +24,14 @@ Voit testata koodiasi esimerkiksi oman `main`-metodin avulla, tai voit hyödynt�
 gradlew.bat test --tests MapBasicsTest    # windows
 ```
 
-💡 Sinun ei tarvitse perehtyä varsinaisen testin tekniseen toteutukseen. Tässä vaiheessa riittää, että suoritat testit ja tutustut niiden mahdollisesti tuottamiin virheilmoituksiin.
+💡 *Sinun ei tarvitse perehtyä varsinaisen testin tekniseen toteutukseen. Tässä vaiheessa riittää, että suoritat testit ja tutustut niiden mahdollisesti tuottamiin virheilmoituksiin.*
 
-💡 Jos testi ei mene läpi, kokeile suorittaa komento uudestaan siten, että lisäät loppuun argumentin `--info`. Näin saat tarkemman tiedon siitä, mikä testissä meni pieleen. Voit myös avata HTML-muotoisen testiraportin, joka kertoo lisätietoja virheestä. Vaihtoehtoisesti voit suorittaa testit koodieditorisi testauspainikkeilla.
+💡 *Jos testit eivät mene läpi, kokeile suorittaa komento uudestaan siten, että lisäät loppuun argumentin `--info`. Näin saat tarkemman tiedon siitä, mikä testissä meni pieleen. Vaihtoehtoisesti voit suorittaa testit koodieditorisi testauspainikkeilla.*
 
-🚀 Huomaa, että tämän luokan monet metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tässä tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.
+🚀 *Huomaa, että monet tämän luokan metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tässä tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.*
 
 
-## Tehtävä 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) (soveltaminen, 30 % pisteistä)
+## Tehtävä 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) *(soveltaminen, 30 % pisteistä)*
 
 Tässä tehtävässä jatkamme `Map`-operaatioita soveltavien tehtävien muodossa. Tehtävät ovat luonteeltaan haastavampia ja edellyttävät myös laajempaa ongelmanratkaisua kuin yksittäisen metodin käyttöä.
 
@@ -46,7 +45,7 @@ gradlew.bat test --tests MapExpertsTest    # windows
 ```
 
 
-## Tehtävä 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) (soveltaminen, 30 % pisteistä)
+## Tehtävä 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) *(soveltaminen, 30 % pisteistä)*
 
 Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. [JSON (JavaScript Object Notation)](https://www.json.org/) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
 
@@ -73,7 +72,9 @@ Edellisistä tehtävistä poiketen tässä tehtävässä saat toteuttaa ratkaisu
 
 Toteuta siis [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka hyödyntää [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokan `readPostalCodes`-metodia. Ohjelmasi tulee tulostaa tilanteesta riippuen joko käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
 
-Käyttäjä saattaa siis antaa parametrina numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
+**Postinumero**
+
+Käyttäjä saattaa siis syöttää numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
 
 ```
 Mitä etsitään (esim. 00100 tai Helsinki)? 00100
@@ -82,6 +83,8 @@ Toimipaikka: HELSINKI
 ```
 
 Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
+
+**Toimipaikan nimi**
 
 Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
 
@@ -93,7 +96,7 @@ Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 
 Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
 
-Tulosteessa postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
+Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna**, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
 
 
 ### Ohjelman suorittaminen

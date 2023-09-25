@@ -4,8 +4,7 @@ import java.util.Map;
 
 /**
  * This class demonstrates the basic operations of a Map. Implement each method
- * in this class. For each method, you may only use the methods defined in the
- * Map interface. You may assume that all given keys and values are non-null.
+ * in this class. You may assume that all given keys and values are non-null.
  *
  * Do not change the method signatures or fields, as these will be used by the
  * automated tests.
@@ -64,7 +63,8 @@ public class MapBasics {
      * Return true if the given map contains the given key, false otherwise.
      */
     public boolean hasKey(Map<String, String> map, String key) {
-        // Hint: use the containsKey method
+        // Hint: see the resources above for a method that does this and the rest of
+        // the methods below
         return false;
     }
 
@@ -72,7 +72,6 @@ public class MapBasics {
      * Return true if the given map contains the given value, false otherwise.
      */
     public boolean hasValue(Map<String, String> map, String value) {
-        // Hint: use the containsValue method
         return false;
     }
 
@@ -81,7 +80,6 @@ public class MapBasics {
      * the map.
      */
     public void addIfNotPresent(Map<String, String> map, String key, String value) {
-        // Hint: see the resources above for a method that does this
     }
 
     /**
@@ -91,17 +89,15 @@ public class MapBasics {
      * @param key the key of the entry to remove
      */
     public void removeEntry(Map<String, String> map, String key) {
-        // Hint: see the resources above for a method that does this
     }
 
     /**
-     * Return the number of entries in the given map.
+     * Return the number of entries (key/value pairs) in the given map.
      *
      * @param map the map to count the entries in
      * @return the number of entries in the map
      */
     public int countEntries(Map<String, String> map) {
-        // Hint: see the resources above for a method that does this
         return 0;
     }
 
@@ -144,6 +140,5 @@ public class MapBasics {
      * should modify the given map, not create a new one.
      */
     public void incrementValues(Map<String, Integer> map, int amount) {
-
     }
 }
