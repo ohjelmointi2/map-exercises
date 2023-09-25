@@ -34,6 +34,24 @@ public class MapBasics {
     }
 
     /**
+     * Returns a map that maps the names of the Nordic countries to their
+     * populations. The countries and their populations are:
+     *
+     * Denmark 5 894 687
+     * Finland 5 587 442
+     * Iceland 354 234
+     * Norway 5 509 591
+     * Sweden 10 261 767
+     *
+     * Source: https://en.wikipedia.org/wiki/Nordic_countries, 9.8.2023
+     */
+    public Map<String, Integer> getPopulations() {
+        // Hint: Make sure to write the names of the countries exactly as they are
+        // written above, otherwise the tests will fail.
+        return null;
+    }
+
+    /**
      * Return the value associated with the given key in the given map. If the key
      * is not in the map, return null.
      */

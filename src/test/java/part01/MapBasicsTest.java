@@ -47,6 +47,18 @@ public class MapBasicsTest {
     }
 
     @Test
+    void testGetPopulations() {
+        Map<String, Integer> populations = mapBasics.getPopulations();
+
+        assertEquals(5, populations.size(), "The map should have five entries.");
+        assertEquals(5_894_687, populations.get("Denmark"), "The population of Denmark should be 5894687.");
+        assertEquals(5_587_442, populations.get("Finland"), "The population of Finland should be 5587442.");
+        assertEquals(354_234, populations.get("Iceland"), "The population of Iceland should be 354234.");
+        assertEquals(5_509_591, populations.get("Norway"), "The population of Norway should be 5509591.");
+        assertEquals(10_261_767, populations.get("Sweden"), "The population of Sweden should be 10261767.");
+    }
+
+    @Test
     void testGetValue() {
         assertEquals("127.0.0.1", mapBasics.getValue(ips, "home"));
         assertEquals("8.8.8.8", mapBasics.getValue(ips, "google"));
