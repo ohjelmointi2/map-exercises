@@ -104,8 +104,12 @@ Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla e
 Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-pääohjelman joko koodieditorisi käyttöliittymän Run-painikkeella tai Gradle-työkalun avulla komentoriviltä:
 
 ```sh
-./gradlew -q --console plain run       # unix
-gradlew.bat -q --console plain run     # windows
+./gradlew --quiet --console plain run       # unix
+gradlew.bat --quiet --console plain run     # windows
+
+# -q, --quiet         Log errors only.
+# --console [plain]   Specifies which type of console output to generate.
+#                     Values are 'plain', 'auto' (default), 'rich' or 'verbose'.
 ```
 
 💡 *Ensimmäisellä suorituskerralla suoritus saattaa olla hyvin hidas, mutta [suoritus nopeutuu seuraavilla kerroilla Gradlen välimuistin ansiosta](https://docs.gradle.org/current/userguide/build_cache.html). Voit myös vaihtoehtoisesti suorittaa ohjelmasi käyttämäsi koodieditorin "run"-painikkeella.*
