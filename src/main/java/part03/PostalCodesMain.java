@@ -1,13 +1,25 @@
 package part03;
 
 import java.util.Map;
+import java.util.Scanner;
 
 public class PostalCodesMain {
 
+    /**
+     * Implement your logic in this method. You can also add your own methods and
+     * classes if needed.
+     */
     public static void main(String[] args) {
+        // a Map from postal code ("00100") to postal district name ("HELSINKI").
         Map<String, String> postalCodes = PostalCodes.readPostalCodes();
 
-        System.out.println("Postal code 00100 is for " + postalCodes.get("00100"));
-        System.out.println("Postal code 99999 is for " + postalCodes.get("99999"));
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Mitä etsitään (esim. 00100 tai Helsinki)? ");
+        String answer = scanner.nextLine();
+
+        // TODO: Implement your logic here.
+
+        scanner.close();
     }
 }

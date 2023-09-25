@@ -30,7 +30,12 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'gradle.template.App'
+    mainClass = 'part03.PostalCodesMain'
+}
+
+run {
+    // https://stackoverflow.com/a/36724429
+    standardInput = System.in
 }
 
 tasks.named('test') {

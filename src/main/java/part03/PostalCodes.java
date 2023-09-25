@@ -9,14 +9,23 @@ import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * This class reads the postal codes from a JSON file and returns them as a
+ * Map from postal code to postal district name.
+ */
 public class PostalCodes {
 
+    // The path to the JSON file containing the postal codes.
     private static final Path postalCodesJSON = Path.of("data", "postcode_map_light.json");
 
+    /**
+     * Reads the postal codes from the JSON file and returns them as a Map from
+     * postal code to postal district name.
+     *
+     * @return the postal codes {74701=KIURUVESI, 35540=JUUPAJOKI ... 99999=KUUSAMO}
+     */
     public static Map<String, String> readPostalCodes() {
-        /*
-         * See https://github.com/google/gson/blob/main/UserGuide.md#maps-examples
-         */
+        // See https://github.com/google/gson/blob/main/UserGuide.md#maps-examples
         Gson gson = new Gson();
         TypeToken<Map<String, String>> mapType = new TypeToken<Map<String, String>>() {
         };

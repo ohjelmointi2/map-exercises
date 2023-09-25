@@ -35,7 +35,7 @@ gradlew.bat test --tests MapBasicsTest    # windows
 
 💡 Jos testi ei mene läpi, kokeile suorittaa komento uudestaan siten, että lisäät loppuun argumentin `--info`. Näin saat tarkemman tiedon siitä, mikä testissä meni pieleen. Voit myös avata HTML-muotoisen testiraportin, joka kertoo lisätietoja virheestä. Vaihtoehtoisesti voit suorittaa testit koodieditorisi testauspainikkeilla.
 
-💡  Huomaa, että tämän luokan monet metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.
+🚀 Huomaa, että tämän luokan monet metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tässä tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.
 
 
 ## Tehtävä 2: etunimitilasto (soveltaminen, X % pisteistä)
@@ -98,7 +98,7 @@ Bye!
 
 ## Tehtävä 3: postinumerot  (soveltaminen, X % pisteistä)
 
-Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. JSON (JavaScript Object Notation) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
+Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. [JSON (JavaScript Object Notation)](https://www.json.org/) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
 
 ```json
 {
@@ -112,16 +112,16 @@ Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan k�
 
 Java-ohjelmassa Map-tietorakenne soveltuu erinomaisesti yllä esitettyjen avain-arvo-parien käsittelemiseen. Tässä tehtävässä keskitymme postinumeroaineiston käsittelyyn, joka on tallennettu [JSON-muotoiseen tiedostoon](./data/postcode_map_light.json).
 
-JSON-tiedoston lukemiseen Java-ohjelmassa käytämme Googlen julkaisemaa [GSON-kirjastoa](https://github.com/google/gson). GSON mahdollistaa JSON-datan muuntamisen Java-olioiksi ja päinvastoin. Se tarjoaa helpon tavan käsittää JSON-tietoa ilman monimutkaisia manuaalisia toimenpiteitä. GSON-kirjaston käyttö on sinulle valmiiksi annettuna luokassa [PostalCodes](./src/main/java/part03/PostalCodes.java). Sinun ei tarvitse perehtyä GSONin yksityiskohtiin tai implementoida sitä itse.
+JSON-tiedoston lukemiseen Java-ohjelmassa käytämme tässä tehtävässä Googlen julkaisemaa [GSON-kirjastoa](https://github.com/google/gson). GSON mahdollistaa JSON-datan muuntamisen Java-olioiksi ja päinvastoin. GSON-kirjaston käyttö on toteutettu valmiiksi [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokassa. Sinun ei tarvitse perehtyä GSONin yksityiskohtiin tai implementoida sitä itse.
 
 Sinun tehtäväsi on luoda [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka etsii luetusta Map-tietorakenteesta käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
 
 Käyttäjä saattaa siis antaa parametrina numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
 
 ```
-Mitä etsitään? 00100
+Mitä etsitään (esim. 00100 tai Helsinki)? 00100
 
-Toimipaikka: Helsinki
+Toimipaikka: HELSINKI
 ```
 
 Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
@@ -129,15 +129,27 @@ Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löy
 Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
 
 ```
-Mitä etsitään? Porvoo
+Mitä etsitään (esim. 00100 tai Helsinki)? Porvoo
 
 Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 ```
 
-Toisin kuin edellisessä tehtävässä, tässä ongelmaa ei voida ratkaista tarkistamalla arvoa suoraan yksittäisen avaimen avulla. Sen sijaan sinun tulee käydä koko Map-tietorakenne läpi ja etsiä kaikki postinumerot, eli avaimet, joiden arvo vastaa käyttäjän antamaa merkkijonoa. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt."
+Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-pääohjelman joko koodieditorisi käyttöliittymän Run-painikkeella kautta tai Gradle-työkalun avulla komentoriviltä:
+
+```sh
+./gradlew -q --console plain run       # unix
+gradlew.bat -q --console plain run     # windows
+```
+
+Tehtävän jälkimmäistä osaa ei voida ratkaista yksittäisellä metodikutsulla. Sen sijaan sinun tulee käydä Map-tietorakenne läpi ja etsiä kaikki postinumerot, eli avaimet, joiden arvo vastaa käyttäjän antamaa merkkijonoa. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta toimipaikan nimen kirjainkoosta.
 
 Tulosteessa postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
 
+💡 Tässä tehtävässä saat toteuttaa ratkaisun parhaaksi katsomallasi tavalla käyttäen esimerkiksi useita eri luokkia tai metodeita. Ohjelmasi on kuitenkin toimittava siten, että se käynnistyy `PostalCodesMain`-luokasta ja kysyy käyttäjältä ainoastaan yhden kysymyksen. Tulos täytyy myös tulostaa tehtävänannossa esitetyssä muodossa.
+
+🚀 GSON ei ole osa Javan standardikirjastoa, vaan se on lisätty tähän projektiin Gradle-työkalun avulla. Tutki [`build.gradle`](./build.gradle)-tiedostoa, löydätkö miten ja mihin GSON on määritetty?
+
+🚀 Gradle osaa suorittaa run-komennolla oikean pääohjelman, koska PostalCodesMain on määritetty [`build.gradle`](./build.gradle)-tiedostossa pääohjelmaksi.
 
 
 ## Nimiaineiston lisenssi
