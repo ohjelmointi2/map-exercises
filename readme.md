@@ -1,18 +1,41 @@
-# Tavoitteet
+# Map-harjoitukset
 
-Opit lisäämään ja hakemaan tietoa map-rakenteesta. Opit käymään map-rakenteita läpi hyödyntäen myös `forEach`-metodia sekä lambda-lausekkeita.
+Tämän harjoitustehtäväpaketin myötä opit hyödyntämään Map-tietorakennetta omissa sovelluksissasi. Harjoitusten tueksi suosittelemme lukemaan Oraclen dev.java-tutoriaalista sivut [Using Maps to Store Key Value Pairs](https://dev.java/learn/api/collections-framework/maps/) sekä [Managing the Content of a Map](https://dev.java/learn/api/collections-framework/working-with-keys-and-values/).
 
-* Sukunimitilasto
+> *"A hashmap is a structure able to store key-value pairs. The value is any object your application needs to handle, and a key is something that can represent this object.*
+>
+> *Suppose you need to create an application that has to handle invoices, represented by instances of an Invoice class. Then your values are these Invoice instances, and your keys could be the invoice numbers. Each invoice has a number, and that number is unique among all your invoices."*
+>
+> Using Maps to Store Key Value Pairs. Oracle. https://dev.java/learn/api/collections-framework/maps/
 
-    Opit luomaan Map-tietorakenteen ja lisäämään siihen tietoa.
+Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valmiiksi kirjoitettuja JUnit-testejä. Ennen oman toteutuksen aloittamista varmista, että saat suoritettua tehtäväpohjassa valmiina olevan koodin ongelmitta run-komennolla:
 
-* Etunimitilasto
+```sh
+./gradlew run       # unix
+gradlew.bat run     # windows
+```
 
-    Opit soveltamaan Map-tietorakenteen käyttöä tarkastamalla ja kasvattamalla siinä mahdollisesti jo valmiiksi olevia arvoja.
+💡 Ensimmäisellä suorituskerralla suoritus saattaa olla hyvin hidas, mutta [suoritus nopeutuu seuraavilla kerroilla Gradlen välimuistin ansiosta](https://docs.gradle.org/current/userguide/build_cache.html). Voit myös vaihtoehtoisesti suorittaa ohjelmasi käyttämäsi koodieditorin "run"-painikkeella.
 
-* Postinumerot
 
-    Opit soveltamaan Map-tietorakennetta tilanteessa, jossa yhdelle avaimelle on tarpeen tallentaa useita arvoja.
+## Tehtävä 1: Map-tietorakenteen käyttäminen
+
+Tässä tehtävässä harjoitellaan uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
+
+Tehtävässä koodattava Java-luokka [MapBasics](./src/main/java/part01/MapBasics.java) koostuu valmiista metodeista, joiden javadoc-kommentit kertovat, miten metodin tulisi toimia. **Sinun tehtäväsi on lukea kommentit ja toteuttaa metodin sisältö vastaamaan metodin nimeä sekä kuvausta.**
+
+Voit testata koodiasi esimerkiksi oman `main`-metodin avulla, tai voit hyödyntää tehtävän valmiita JUnit-yksikkötestejä, jotka löytyvät [MapBasicsTest](./src/test/java/part01/MapBasicsTest.java)-luokasta. Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
+
+```sh
+./gradlew test --tests MapBasicsTest      # unix
+gradlew.bat test --tests MapBasicsTest    # windows
+```
+
+💡 Sinun ei tarvitse perehtyä varsinaisen testin tekniseen toteutukseen. Tässä vaiheessa riittää, että suoritat testit ja tutustut niiden mahdollisesti tuottamiin virheilmoituksiin.
+
+💡 Jos testi ei mene läpi, kokeile suorittaa komento uudestaan siten, että lisäät loppuun argumentin `--info`. Näin saat tarkemman tiedon siitä, mikä testissä meni pieleen. Voit myös avata HTML-muotoisen testiraportin, joka kertoo lisätietoja virheestä. Vaihtoehtoisesti voit suorittaa testit koodieditorisi testauspainikkeilla.
+
+💡  Huomaa, että tämän luokan monet metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.
 
 
 ## Tehtävä 1: väkiluvut
