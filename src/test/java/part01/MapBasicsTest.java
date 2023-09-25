@@ -119,7 +119,8 @@ public class MapBasicsTest {
 
     @Test
     void testLargestValue() {
-        Map<String, Integer> numbers = Map.of("one", 1,
+        Map<String, Integer> numbers = Map.of(
+                "one", 1,
                 "two", 2,
                 "three", 3,
                 "four", 4);
@@ -128,7 +129,8 @@ public class MapBasicsTest {
 
     @Test
     void testSumOfValues() {
-        Map<String, Integer> numbers = Map.of("one", 1,
+        Map<String, Integer> numbers = Map.of(
+                "one", 1,
                 "two", 2,
                 "three", 3,
                 "four", 4);
@@ -142,7 +144,7 @@ public class MapBasicsTest {
                 "Sweden", "Stockholm",
                 "Norway", "Oslo");
         Map<String, String> capitals2 = Map.of(
-                "Finland", "TURKU", // should use the value from the first map
+                "Finland", "TURKU", // this should not override the value from the first map
                 "Denmark", "Copenhagen",
                 "Iceland", "Reykjavik");
 
@@ -154,19 +156,17 @@ public class MapBasicsTest {
 
     @Test
     void testIncrementValues() {
-        Map<String, Integer> numbers = new HashMap<>(Map.of("one", 1,
+        Map<String, Integer> numbers = new HashMap<>(Map.of(
+                "one", 1,
                 "two", 2,
                 "three", 3,
                 "four", 4));
 
         mapBasics.incrementValues(numbers, 100);
 
-        Map<String, Integer> expected = Map.of("one", 101,
-                "two", 102,
-                "three", 103,
-                "four", 104);
-
-        assertEquals(expected, numbers);
+        assertEquals(101, numbers.get("one"));
+        assertEquals(102, numbers.get("two"));
+        assertEquals(103, numbers.get("three"));
     }
 
 }

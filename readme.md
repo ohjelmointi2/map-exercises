@@ -8,19 +8,13 @@ Tämän harjoitustehtäväpaketin myötä opit hyödyntämään Map-tietorakenne
 >
 > Using Maps to Store Key Value Pairs. Oracle. https://dev.java/learn/api/collections-framework/maps/
 
-Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valmiiksi kirjoitettuja JUnit-testejä. Ennen oman toteutuksen aloittamista varmista, että saat suoritettua tehtäväpohjassa valmiina olevan koodin ongelmitta run-komennolla:
-
-```sh
-./gradlew run       # unix
-gradlew.bat run     # windows
-```
-
-💡 Ensimmäisellä suorituskerralla suoritus saattaa olla hyvin hidas, mutta [suoritus nopeutuu seuraavilla kerroilla Gradlen välimuistin ansiosta](https://docs.gradle.org/current/userguide/build_cache.html). Voit myös vaihtoehtoisesti suorittaa ohjelmasi käyttämäsi koodieditorin "run"-painikkeella.
+Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valmiiksi kirjoitettuja testejä.
+Ennen oman toteutuksen aloittamista varmista, että saat suoritettua tehtäväpohjassa valmiina olevan koodin ongelmitta run-komennolla:
 
 
-## Tehtävä 1: Map-tietorakenteen käyttäminen (perusteet, X % pisteistä)
+## Tehtävä 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) (perusteet, 40 % pisteistä)
 
-Tässä tehtävässä harjoitellaan uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
+Tässä tehtävässä harjoittelemme uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
 
 Tehtävässä koodattava Java-luokka [MapBasics](./src/main/java/part01/MapBasics.java) koostuu valmiista metodeista, joiden javadoc-kommentit kertovat, miten metodin tulisi toimia. **Sinun tehtäväsi on lukea kommentit ja toteuttaa metodin sisältö vastaamaan metodin nimeä sekä kuvausta.**
 
@@ -38,65 +32,21 @@ gradlew.bat test --tests MapBasicsTest    # windows
 🚀 Huomaa, että tämän luokan monet metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tässä tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.
 
 
-## Tehtävä 2: etunimitilasto (soveltaminen, X % pisteistä)
+## Tehtävä 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) (soveltaminen, 30 % pisteistä)
 
-Tässä tehtävässä sinun tulee hyödyntää [Väestörekisterikeskuksen julkaisemaa ensimmäisten etunimien tilastoa](https://www.avoindata.fi/data/fi/dataset/none) ja kirjoittaa ohjelma, joka kertoo käyttäjälle kuinka monta kunkin nimistä Suomen kansalaista on väestötietojärjestelmässä.
+Tässä tehtävässä jatkamme `Map`-operaatioita soveltavien tehtävien muodossa. Tehtävät ovat luonteeltaan haastavampia ja edellyttävät myös laajempaa ongelmanratkaisua kuin yksittäisen metodin käyttöä.
 
-Aineistossa kukin nimi, määrä ja henkilöiden sukupuoli on erotettu riveittän puolipisteillä seuraavalla tavalla:
+Kuten edellisessä tehtävässä, myös [MapExperts.java](./src/main/java/part02/MapExperts.java) koostuu valmiista metodeista, joiden javadoc-kommentit kertovat, miten metodin tulisi toimia. **Sinun tehtäväsi on lukea kommentit ja toteuttaa metodin sisältö vastaamaan metodin nimeä sekä kuvausta.**
 
-```csv
-Etunimi;Lukumäärä
-Anne;30 204
-Tuula;30 113
-Päivi;29 789
-Anna;28 677
-Leena;27 745
+Kuten edellisessä tehtävässä, voit testata koodiasi esimerkiksi oman `main`-metodin tai valmiiden JUnit-yksikkötestien avulla. Testit löytyvät [MapExpertsTest](./src/test/java/part02/MapExpertsTest.java)-luokasta. Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
+
+```sh
+./gradlew test --tests MapExpertsTest      # unix
+gradlew.bat test --tests MapExpertsTest    # windows
 ```
 
-Tietyllä merkillä erotellusta tekstitiedostosta käytetään yleisesti termiä [CSV (Comma Separated Values)](https://en.wikipedia.org/wiki/Comma-separated_values), vaikka erottimena tässä tapauksessa onkin käytetty puolipistettä (`;`).
 
-
-### CSV-datan käsitteleminen
-
-Aineistoa käsitellessäsi sinun tulee pilkkoa kukin rivi puolipisteiden kohdalta ja laittaa saamastasi taulukosta nimi sekä lukumäärää talteen map:iin. Huomaa, että tiedostossa lukumäärä on esitetty merkkijonona ja siinä käytetään tuhaterottimena välilyöntiä (esim. `"30 204"`). Joudut poistamaan välilyönnit merkkijonosta ennen sen muuttamista kokonaisluvuksi, esimerkiksi näin:
-
-```java
-String maara = osat[1];
-maara = maara.replaceAll(" ", "");
-```
-
-Huomaa myös, että joitakin nimiä esiintyy sekä miehillä ja naisilla, jolloin sinun tulee tarpeen mukaan kasvattaa kokoelmaan tallennettua arvoa sen ylikirjoittamisen sijaan.
-
-
-## Käyttöliittymä
-
-Kun aineisto on käyty läpi, ohjelmasi tulee kysyä käyttäjältä nimiä ja kertoa, kuinka monta annetun nimistä suomalaista aineistosta löytyy. Katso tarkempi kuvaus alta esimerkkisuorituksesta. Ohjelman suoritus päättyy, kun käyttäjä syöttää tekstin "exit" tai jättää nimen tyhjäksi.
-
-```
-First name: Pekka
-33630
-
-First name: Pirkko
-24786
-
-First name: Kaino
-916
-
-First name: Tuisku
-196
-
-First name: Lahja
-2647
-
-First name: Wolverine
-0
-
-First name: exit
-
-Bye!
-```
-
-## Tehtävä 3: postinumerot  (soveltaminen, X % pisteistä)
+## Tehtävä 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) (soveltaminen, 30 % pisteistä)
 
 Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. [JSON (JavaScript Object Notation)](https://www.json.org/) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
 
@@ -110,11 +60,18 @@ Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan k�
 }
 ```
 
-Java-ohjelmassa Map-tietorakenne soveltuu erinomaisesti yllä esitettyjen avain-arvo-parien käsittelemiseen. Tässä tehtävässä keskitymme postinumeroaineiston käsittelyyn, joka on tallennettu [JSON-muotoiseen tiedostoon](./data/postcode_map_light.json).
+Java-ohjelmassa Map-tietorakenne soveltuu erinomaisesti yllä esitettyjen avain-arvo-parien käsittelemiseen. Tässä tehtävässä keskitymme postinumeroaineiston käsittelyyn, joka on tallennettu [JSON-muotoiseen tiedostoon nimeltä *postcode_map_light.json*](./data/postcode_map_light.json).
 
-JSON-tiedoston lukemiseen Java-ohjelmassa käytämme tässä tehtävässä Googlen julkaisemaa [GSON-kirjastoa](https://github.com/google/gson). GSON mahdollistaa JSON-datan muuntamisen Java-olioiksi ja päinvastoin. GSON-kirjaston käyttö on toteutettu valmiiksi [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokassa. Sinun ei tarvitse perehtyä GSONin yksityiskohtiin tai implementoida sitä itse.
+💡 *JSON-tiedoston lukemiseen Java-ohjelmassa käytämme tässä tehtävässä Googlen julkaisemaa [GSON-kirjastoa](https://github.com/google/gson). GSON mahdollistaa JSON-datan muuntamisen Java-olioiksi ja päinvastoin. JSON-tiedoston käsittely on toteutettu valmiiksi [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokassa. Sinun ei tarvitse perehtyä GSON:in yksityiskohtiin tai käyttää sitä itse.*
 
-Sinun tehtäväsi on luoda [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka etsii luetusta Map-tietorakenteesta käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
+🚀 *GSON ei ole osa Javan standardikirjastoa, vaan se on lisätty tähän projektiin Gradle-työkalun avulla. Tutki [`build.gradle`](./build.gradle)-tiedostoa, löydätkö miten ja mihin GSON on määritetty?*
+
+
+### Käyttöliittymä
+
+Edellisistä tehtävistä poiketen tässä tehtävässä saat toteuttaa ratkaisun parhaaksi katsomallasi tavalla ja luoda parhaaksi katsomasi luokat ja metodit. Ohjelmasi on kuitenkin toimittava siten, että se käynnistyy `PostalCodesMain`-luokan main-metodista ja kysyy käyttäjältä ainoastaan yhden kysymyksen. Tulos täytyy myös tulostaa tehtävänannossa esitetyssä muodossa.
+
+Toteuta siis [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka hyödyntää [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokan `readPostalCodes`-metodia. Ohjelmasi tulee tulostaa tilanteesta riippuen joko käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
 
 Käyttäjä saattaa siis antaa parametrina numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
 
@@ -124,7 +81,7 @@ Mitä etsitään (esim. 00100 tai Helsinki)? 00100
 Toimipaikka: HELSINKI
 ```
 
-Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
+Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
 
 Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
 
@@ -134,22 +91,23 @@ Mitä etsitään (esim. 00100 tai Helsinki)? Porvoo
 Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 ```
 
-Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-pääohjelman joko koodieditorisi käyttöliittymän Run-painikkeella kautta tai Gradle-työkalun avulla komentoriviltä:
+Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
+
+Tulosteessa postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
+
+
+### Ohjelman suorittaminen
+
+Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-pääohjelman joko koodieditorisi käyttöliittymän Run-painikkeella tai Gradle-työkalun avulla komentoriviltä:
 
 ```sh
 ./gradlew -q --console plain run       # unix
 gradlew.bat -q --console plain run     # windows
 ```
 
-Tehtävän jälkimmäistä osaa ei voida ratkaista yksittäisellä metodikutsulla. Sen sijaan sinun tulee käydä Map-tietorakenne läpi ja etsiä kaikki postinumerot, eli avaimet, joiden arvo vastaa käyttäjän antamaa merkkijonoa. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta toimipaikan nimen kirjainkoosta.
+💡 *Ensimmäisellä suorituskerralla suoritus saattaa olla hyvin hidas, mutta [suoritus nopeutuu seuraavilla kerroilla Gradlen välimuistin ansiosta](https://docs.gradle.org/current/userguide/build_cache.html). Voit myös vaihtoehtoisesti suorittaa ohjelmasi käyttämäsi koodieditorin "run"-painikkeella.*
 
-Tulosteessa postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
-
-💡 Tässä tehtävässä saat toteuttaa ratkaisun parhaaksi katsomallasi tavalla käyttäen esimerkiksi useita eri luokkia tai metodeita. Ohjelmasi on kuitenkin toimittava siten, että se käynnistyy `PostalCodesMain`-luokasta ja kysyy käyttäjältä ainoastaan yhden kysymyksen. Tulos täytyy myös tulostaa tehtävänannossa esitetyssä muodossa.
-
-🚀 GSON ei ole osa Javan standardikirjastoa, vaan se on lisätty tähän projektiin Gradle-työkalun avulla. Tutki [`build.gradle`](./build.gradle)-tiedostoa, löydätkö miten ja mihin GSON on määritetty?
-
-🚀 Gradle osaa suorittaa run-komennolla oikean pääohjelman, koska PostalCodesMain on määritetty [`build.gradle`](./build.gradle)-tiedostossa pääohjelmaksi.
+🚀 *Gradle osaa suorittaa run-komennolla main-metodin oikeasta Java-luokasta, koska `PostalCodesMain` on määritetty [`build.gradle`](./build.gradle)-tiedostossa pääohjelmaksi.*
 
 
 ## Nimiaineiston lisenssi
