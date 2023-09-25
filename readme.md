@@ -18,7 +18,7 @@ gradlew.bat run     # windows
 💡 Ensimmäisellä suorituskerralla suoritus saattaa olla hyvin hidas, mutta [suoritus nopeutuu seuraavilla kerroilla Gradlen välimuistin ansiosta](https://docs.gradle.org/current/userguide/build_cache.html). Voit myös vaihtoehtoisesti suorittaa ohjelmasi käyttämäsi koodieditorin "run"-painikkeella.
 
 
-## Tehtävä 1: Map-tietorakenteen käyttäminen
+## Tehtävä 1: Map-tietorakenteen käyttäminen (perusteet, X % pisteistä)
 
 Tässä tehtävässä harjoitellaan uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
 
@@ -38,61 +38,9 @@ gradlew.bat test --tests MapBasicsTest    # windows
 💡  Huomaa, että tämän luokan monet metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.
 
 
-## Tehtävä 1: väkiluvut
+## Tehtävä 2: etunimitilasto (soveltaminen, X % pisteistä)
 
-Tässä tehtävässä harjoitellaan uuden `Map`-olion luontia sekä tiedon lisäämistä, hakemista ja läpikäyntiä `Map`-tietorakenteen kanssa.
-
-Tehtävässä sinun tulee täydentää seuraavaa tehtäväpohjaa `Exercise1.java`:
-
-```java
-import java.util.HashMap;
-import java.util.Map;
-
-public class Exercise1 {
-
-    public Map<String, Long> buildPopulationMap() {
-        // TODO: Luo uusi map, johon lisäät pohjoismaiden nimet ja väkiluvut
-    }
-
-    public void setPopulation(Map<String, Long> populations, String country, long population) {
-        // TODO: Aseta annettuun Map-tietorakenteeseen annettu maa sekä sen väkiluku.
-        // Mikäli maa löytyy jo Map:ista, korvataan sen aikaisempi väkiluku uudella.
-    }
-
-    public void incrementPopulation(Map<String, Long> populations, String country, long change) {
-        // TODO: Kasvata annetussa Map-tietorakenteessa olevan maan väkilukua annetun määrän verran.
-        // Mikäli maata ei löydy valmiiksi, asetetaan annettu muutos sellaisenaan väkiluvuksi.
-    }
-
-    public long sumOfPopulations(Map<String, Long> map) {
-        // TODO: Laske yheen annetussa Map-tietorakenteessa olevien maiden väkiluvut ja palauta tulos
-    }
-}
-```
-
-`buildPopulationMap`-metodissa luotavan `Map`-tietorakenteen alkuarvoiksi tulee asettaa seuraavat maat ja niiden väkiluvut:
-
-Maa     | Väkiluku
---------|-----------:
-Denmark | 5 894 687
-Finland | 5 587 442
-Iceland | 354 234
-Norway  | 5 509 591
-Sweden  | 10 261 767
-
-Väkilukujen lähde: [Wikipedia](https://en.wikipedia.org/wiki/Nordic_countries), 9.8.2023
-
-## Tehtävä 2: etunimitilasto
-
-Tässä tehtävässä opit:
-
-* keräämään Map-tietorakenteeseen uutta informaatiota listalta lukemiesi tietojen perusteella
-* muokkaamaan välilyönnillä esitettyjä lukuja int-tyypin edellyttämään muotoon
-* lisäämään Map-tietorakenteeseen uusia arvoja
-* tarkastamaan sisältääkö Map-tietorakenne arvoa tietyllä avaimella
-* kasvattamaan Map-tietorakenteessa jo valmiiksi olevaa arvoa
-
-Tässä tehtävässä sinun tulee hyödyntää Väestörekisterikeskuksen julkaisemaa ensimmäisten etunimien tilastoa ja kirjoittaa ohjelma, joka kertoo käyttäjälle kuinka monta kunkin nimistä Suomen kansalaista on väestötietojärjestelmässä.
+Tässä tehtävässä sinun tulee hyödyntää [Väestörekisterikeskuksen julkaisemaa ensimmäisten etunimien tilastoa](https://www.avoindata.fi/data/fi/dataset/none) ja kirjoittaa ohjelma, joka kertoo käyttäjälle kuinka monta kunkin nimistä Suomen kansalaista on väestötietojärjestelmässä.
 
 Aineistossa kukin nimi, määrä ja henkilöiden sukupuoli on erotettu riveittän puolipisteillä seuraavalla tavalla:
 
@@ -148,6 +96,49 @@ First name: exit
 Bye!
 ```
 
+## Tehtävä 3: postinumerot  (soveltaminen, X % pisteistä)
+
+Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. JSON (JavaScript Object Notation) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
+
+```json
+{
+    "74701": "KIURUVESI",
+    "35540": "JUUPAJOKI",
+    "74705": "PAKETTIAUTOMAATTI",
+    "74704": "SMARTPOST",
+    "44884": "SMART POST"
+}```
+
+Java-ohjelmassa Map-tietorakenne soveltuu erinomaisesti yllä esitettyjen avain-arvo-parien käsittelemiseen. Tässä tehtävässä keskitymme postinumeroaineiston käsittelyyn, joka on tallennettu [JSON-muotoiseen tiedostoon](./data/postcode_map_light.json).
+
+JSON-tiedoston lukemiseen Java-ohjelmassa käytämme Googlen julkaisemaa [GSON-kirjastoa](https://github.com/google/gson). GSON mahdollistaa JSON-datan muuntamisen Java-olioiksi ja päinvastoin. Se tarjoaa helpon tavan käsittää JSON-tietoa ilman monimutkaisia manuaalisia toimenpiteitä. GSON-kirjaston käyttö on sinulle valmiiksi annettuna luokassa [PostalCodes](./src/main/java/part03/PostalCodes.java). Sinun ei tarvitse perehtyä GSONin yksityiskohtiin tai implementoida sitä itse.
+
+Sinun tehtäväsi on luoda [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka etsii luetusta Map-tietorakenteesta käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
+
+Käyttäjä saattaa siis antaa parametrina numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
+
+```
+Mitä etsitään? 00100
+
+Toimipaikka: Helsinki
+```
+
+Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
+
+Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
+
+```
+Mitä etsitään? Porvoo
+
+Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
+```
+
+Toisin kuin edellisessä tehtävässä, tässä ongelmaa ei voida ratkaista tarkistamalla arvoa suoraan yksittäisen avaimen avulla. Sen sijaan sinun tulee käydä koko Map-tietorakenne läpi ja etsiä kaikki postinumerot, eli avaimet, joiden arvo vastaa käyttäjän antamaa merkkijonoa. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt."
+
+Tulosteessa postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
+
+
+
 ## Nimiaineiston lisenssi
 
 [Digi- ja väestötietovirasto (DVV)](https://www.avoindata.fi/data/fi/organization/digi_ja_vaestotietovirasto) on julkaissut tietoaineiston [Väestötietojärjestelmän suomalaisten nimiaineistot](https://www.avoindata.fi/data/fi/dataset/none) lisenssillä [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/):
@@ -158,10 +149,15 @@ Bye!
 * [etunimitilasto-naiset-muut.csv](/data/etunimitilasto-naiset-muut.csv)
 * [sukunimitilasto.csv](/data/sukunimitilasto.csv)
 
-### Postinumeroaineiston tekijänoikeudet
+## Postinumeroaineiston tekijänoikeudet
 
-Tässä projektissa hyödynnettävä postinumeroaineisto [postcode_map_light.json](postcode_map_light.json) on lainattu [https://github.com/theikkila/postinumerot](https://github.com/theikkila/postinumerot)-projektin [postcode_map_light.json](https://github.com/theikkila/postinumerot/blob/master/postcode_map_light.json)-tiedostosta 7.6.2023.
+Tässä projektissa hyödynnettävä postinumeroaineisto [postcode_map_light.json](./data/postcode_map_light.json) on lainattu [https://github.com/theikkila/postinumerot](https://github.com/theikkila/postinumerot)-projektin [postcode_map_light.json](https://github.com/theikkila/postinumerot/blob/master/postcode_map_light.json)-tiedostosta 7.6.2023.
 
 Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). Mikäli teet kopioita tästä aineistosta, huolehdi käyttöehtojen noudattamisesta.
 
-* [postcode_map_light.json](/data/postcode_map_light.json)
+* [postcode_map_light.json](./data/postcode_map_light.json)
+
+
+## Tehtävän tekijänoikeudet
+
+Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä. Tehtävän luonnissa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub Copilot -tekoälytyökalua.
