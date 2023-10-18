@@ -11,6 +11,26 @@ Tämän harjoitustehtäväpaketin myötä opit hyödyntämään Map-tietorakenne
 Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valmiiksi kirjoitettuja testejä.
 
 
+## Tehtävän aloittaminen
+
+Aloita kloonaa Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
+
+```sh
+git clone https://github.com/varmista-etta-github-tunnuksesi-on-repositorion-osoitteessa.git
+```
+
+Kloonattuasi projektin omalle koneellesi, avaa se koodieditorissasi.
+
+
+## Vastausten lähettäminen
+
+Kun olet saanut osan tai kaikki tehtävistä ratkaistua ja commitoinut vastauksesi, lähetä ratkaisut arvioitavaksi `git push`-komennolla. Git push käynnistää automaattisesti GitHub actions -workflow:n, joka kääntää sekä testaa ratkaisusi ja antaa jokaisesta testistä joko hyväksytyn tai hylätyn tuloksen.
+
+Kun GitHub Actions on saanut koodisi suoritettua, näet tuloksen GitHub-repositoriosi [Actions-välilehdellä](../../actions/workflows/classroom.yml). Arvioinnin valmistumiseen menee tyypillisesti pari minuuttia.
+
+Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"* -suoritusta, saat tarkemmat tiedot tehtävän arvioinnista. Sivun alaosassa näkyy saamasi pisteet. Klikkaamalla "Autograding"-otsikkoa pääset katsomaan tarkemmin arvioinnissa suoritetut vaiheet ja niiden tulokset. Kuvitetun ohjeen aiheesta löydät GitHubin dokumentista [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
+
+
 ## Tehtävä 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) *(perusteet, 40 % pisteistä)*
 
 Tässä tehtävässä harjoittelemme uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
@@ -124,6 +144,15 @@ Tässä projektissa hyödynnettävä postinumeroaineisto [postcode_map_light.jso
 Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). Mikäli teet kopioita tästä aineistosta, huolehdi käyttöehtojen noudattamisesta.
 
 
-## Tehtävän tekijänoikeudet
+## Ohjelmoinnin MOOC
+
+`MapExperts`-luokan metodeissa on otettu vahvasti vaikutteita Helsingin yliopiston Ohjelmoinnin perusteet -MOOC-kurssin Python-kielisistä tehtävistä osoitteessa https://ohjelmointi-23.mooc.fi/osa-5. Ohjelmoinnin MOOC on lisensoitu CC BY-NC-SA 4.0 -lisenssillä:
+
+> *Kurssimateriaalin ja tehtävien tekijät ovat Erkki Kaila, Antti Laaksonen ja Matti Luukkainen. Muutama kurssin tehtävistä on Arto Hellaksen (né Vihavainen) käsialaa.*
+>
+> *Kurssin materiaali on lisensoitu [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi) -lisenssillä, joten voit käyttää ja levittää sitä vapaasti, kunhan alkuperäisten tekijöiden nimiä ei poisteta. Jos teet muutoksia materiaaliin ja haluat levittää muunneltua versiota, se täytyy lisensoida samalla lisenssillä. Materiaalien käyttö kaupalliseen tarkoitukseen on ilman erillistä lupaa kielletty.*
+
+
+## Tämän tehtävän tekijänoikeudet
 
 Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä. Tehtävänannon, tehtäväpohjien ja automaattisten testien luonnissa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub Copilot -tekoälytyökalua.
