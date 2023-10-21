@@ -1,6 +1,6 @@
 # Map-harjoitukset
 
-Tämän harjoitustehtäväpaketin myötä opit hyödyntämään Map-tietorakennetta omissa sovelluksissasi. Harjoitusten tueksi suosittelemme lukemaan Oraclen dev.java-tutoriaalista sivut [Using Maps to Store Key Value Pairs](https://dev.java/learn/api/collections-framework/maps/) sekä [Managing the Content of a Map](https://dev.java/learn/api/collections-framework/working-with-keys-and-values/).
+Tämän harjoitustehtäväpaketin myötä opit hyödyntämään Map-tietorakennetta omissa sovelluksissasi. Harjoitusten tueksi suosittelemme lukemaan Oraclen [dev.java](https://dev.java/)-tutoriaalista sivut [Using Maps to Store Key Value Pairs](https://dev.java/learn/api/collections-framework/maps/) sekä [Managing the Content of a Map](https://dev.java/learn/api/collections-framework/working-with-keys-and-values/).
 
 > *"A hashmap is a structure able to store key-value pairs. The value is any object your application needs to handle, and a key is something that can represent this object.*
 >
@@ -13,7 +13,7 @@ Tehtävä koostuu useammasta osasta, jotka arvioidaan erikseen hyödyntäen valm
 
 ## Tehtävän aloittaminen
 
-Aloita kloonaa Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
+Aloita kloonaamalla Git-repositorio omalle koneellesi. Harjoitus täytyy tehdä omassa kopiossasi, eli varmista, että repositorion osoitteessa on mukana oma GitHub-käyttäjätunnuksesi! Oman kopiosi saat luotua kurssitoteutuksesi tehtävänannon GitHub classroom -linkin kautta.
 
 ```sh
 git clone https://github.com/varmista-etta-github-tunnuksesi-on-repositorion-osoitteessa.git
@@ -31,7 +31,7 @@ Kun GitHub Actions on saanut koodisi suoritettua, näet tuloksen GitHub-reposito
 Klikkaamalla yllä olevan linkin takaa viimeisintä *"GitHub Classroom Workflow"* -suoritusta, saat tarkemmat tiedot tehtävän arvioinnista. Sivun alaosassa näkyy saamasi pisteet. Klikkaamalla "Autograding"-otsikkoa pääset katsomaan tarkemmin arvioinnissa suoritetut vaiheet ja niiden tulokset. Kuvitetun ohjeen aiheesta löydät GitHubin dokumentista [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
 
 
-## Tehtävä 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) *(perusteet, 40 % pisteistä)*
+## Tehtävä 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) *(perusteet, 40 %)*
 
 Tässä tehtävässä harjoittelemme uuden `Map`-olion luontia sekä tyypillisimpiä operaatioita tiedon lisäämiseksi, hakemiseksi, muuttamiseksi ja poistamiseksi.
 
@@ -51,7 +51,7 @@ gradlew.bat test --tests MapBasicsTest    # windows
 🚀 *Huomaa, että monet tämän luokan metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tässä tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.*
 
 
-## Tehtävä 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) *(soveltaminen, 30 % pisteistä)*
+## Tehtävä 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) *(soveltaminen, 30 %)*
 
 Tässä tehtävässä jatkamme `Map`-operaatioita soveltavien tehtävien muodossa. Tehtävät ovat luonteeltaan haastavampia ja edellyttävät myös laajempaa ongelmanratkaisua kuin yksittäisen metodin käyttöä.
 
@@ -65,7 +65,7 @@ gradlew.bat test --tests MapExpertsTest    # windows
 ```
 
 
-## Tehtävä 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) *(soveltaminen, 30 % pisteistä)*
+## Tehtävä 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) *(soveltaminen, 15 % + 15 %)*
 
 Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. [JSON (JavaScript Object Notation)](https://www.json.org/) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
 
@@ -92,7 +92,7 @@ Edellisistä tehtävistä poiketen tässä tehtävässä saat toteuttaa ratkaisu
 
 Toteuta siis [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka hyödyntää [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokan `readPostalCodes`-metodia. Ohjelmasi tulee tulostaa tilanteesta riippuen joko käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
 
-**Postinumero**
+**Postinumero (15 %)**
 
 Käyttäjä saattaa siis syöttää numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
 
@@ -104,7 +104,7 @@ Toimipaikka: HELSINKI
 
 Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
 
-**Toimipaikan nimi**
+**Toimipaikan nimi (15 %)**
 
 Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
 
@@ -116,7 +116,7 @@ Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 
 Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
 
-Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna**, joten kerää postinumerot ensin esimerkiksi listalle, jonka järjestät ennen tulostamista.
+Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna**, joten kerää postinumerot ensin esimerkiksi listalle, jonka [järjestät](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List)) ennen tulostamista.
 
 
 ### Ohjelman suorittaminen
@@ -141,7 +141,7 @@ gradlew.bat --quiet --console plain run     # windows
 
 Tässä projektissa hyödynnettävä postinumeroaineisto [postcode_map_light.json](./data/postcode_map_light.json) on lainattu [https://github.com/theikkila/postinumerot](https://github.com/theikkila/postinumerot)-projektin [postcode_map_light.json](https://github.com/theikkila/postinumerot/blob/master/postcode_map_light.json)-tiedostosta 7.6.2023.
 
-Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). Mikäli teet kopioita tästä aineistosta, huolehdi käyttöehtojen noudattamisesta.
+Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). Mikäli teet kopioita tästä aineistosta, huolehdi [käyttöehtojen](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot) noudattamisesta.
 
 
 ## Ohjelmoinnin MOOC
