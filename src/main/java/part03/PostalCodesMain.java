@@ -24,6 +24,8 @@ public class PostalCodesMain {
         /*
          * This map contains data that is read from the JSON file. You don't need to
          * inspect the file handling in this exercise, but you can if you want to.
+         *
+         * The keys in the map are postal codes and the values are postal district names.
          */
         Map<String, String> postalCodes = PostalCodes.readPostalCodes();
 
