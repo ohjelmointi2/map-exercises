@@ -100,6 +100,8 @@ Käyttäjä saattaa siis syöttää numeron, jolloin ohjelma etsii sitä vastaav
 Mitä etsitään (esim. 00100 tai Helsinki)? 00100
 
 Toimipaikka: HELSINKI
+
+[ ohjelman suoritus päättyy ]
 ```
 
 Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
@@ -114,6 +116,8 @@ Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki pos
 Mitä etsitään (esim. 00100 tai Helsinki)? Porvoo
 
 Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
+
+[ ohjelman suoritus päättyy ]
 ```
 
 Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
