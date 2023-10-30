@@ -19,7 +19,7 @@ public class MapExperts {
      * number of occurrences of each letter as values.
      *
      * For example, if the word is "hello", the returned Map contains the
-     * following key-value pairs: h -> 1, e -> 1, l -> 2, o -> 1
+     * following key-value pairs: { h -> 1, e -> 1, l -> 2, o -> 1 }
      *
      * You can assume that all letters are in lower case and that the given word
      * contains only letters.
@@ -32,11 +32,21 @@ public class MapExperts {
      * Returns a new map that has the keys and values of the given map swapped.
      *
      * For example, if the given map contains the key-value pairs
-     * "one" -> 1, "two" -> 2, "three" -> 3
+     * { "one" -> 1, "two" -> 2, "three" -> 3 }
      * then the returned map contains the key-value pairs
-     * 1 -> "one", 2 -> "two", 3 -> "three".
+     * { 1 -> "one", 2 -> "two", 3 -> "three" }
      */
     public Map<Integer, String> reverseMap(Map<String, Integer> map) {
+        /*
+         * The keys of a map are always unique, so we can't have two keys with the same
+         * value. However, there is no such restriction for the values of a map:
+         *
+         * { "apples" -> 1, "oranges" -> 1 }
+         *
+         * If the given map contains multiple keys with the same value, as above, you
+         * can choose any of the keys to be the value of the reversed map. So either
+         * { 1 -> "apples" } or { 1 -> "oranges" } will be accepted.
+         */
         return null;
     }
 
