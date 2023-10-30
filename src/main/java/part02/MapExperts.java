@@ -25,6 +25,11 @@ public class MapExperts {
      * contains only letters.
      */
     public Map<Character, Integer> countLetters(String word) {
+        /*
+         * Hint: you can get the characters of a String using either the charAt() method
+         * or the toCharArray() method. charAt() returns a single character and
+         * toCharArray() returns an array of characters.
+         */
         return null;
     }
 
@@ -65,6 +70,13 @@ public class MapExperts {
      * "SOF004AS2A" -> Course("SOF004AS2A", "Python-ohjelmointi")
      */
     public Map<String, Course> createMapFromList(List<Course> list) {
+        /*
+         * Each Course object has a code and a name. You can access them using the
+         * code() and name() methods:
+         *
+         * String code = course.code();
+         * String name = course.name(); // you won't need this in the exercise
+         */
         return null;
     }
 }

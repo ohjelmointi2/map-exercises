@@ -18,4 +18,12 @@ package part02;
  * See more at https://dev.java/learn/records/
  */
 public record Course(String code, String name) {
+    /*
+     * You don't need to modify this class in the exercises. Just use the code() and
+     * name() methods to access the code and name of the course:
+     *
+     * Course c = new Course("SOF001AS3A", "Ohjelmointi 2");
+     * String code = c.code();
+     * String name = c.name();
+     */
 }
