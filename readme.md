@@ -39,9 +39,9 @@ Tehtävässä koodattava Java-luokka [MapBasics](./src/main/java/part01/MapBasic
 
 Voit testata koodiasi esimerkiksi oman `main`-metodin avulla, tai voit hyödyntää tehtävän valmiita JUnit-yksikkötestejä, jotka löytyvät [MapBasicsTest](./src/test/java/part01/MapBasicsTest.java)-luokasta. Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
-```sh
-./gradlew test --tests MapBasicsTest      # unix
-gradlew.bat test --tests MapBasicsTest    # windows
+```
+./gradlew test --tests MapBasicsTest        # unix
+.\gradlew.bat test --tests MapBasicsTest    # windows
 ```
 
 💡 *Sinun ei tarvitse perehtyä varsinaisen testin tekniseen toteutukseen. Tässä vaiheessa riittää, että suoritat testit ja tutustut niiden mahdollisesti tuottamiin virheilmoituksiin.*
@@ -59,9 +59,9 @@ Kuten edellisessä tehtävässä, myös [MapExperts.java](./src/main/java/part02
 
 Kuten edellisessä tehtävässä, voit testata koodiasi esimerkiksi oman `main`-metodin tai valmiiden JUnit-yksikkötestien avulla. Testit löytyvät [MapExpertsTest](./src/test/java/part02/MapExpertsTest.java)-luokasta. Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
-```sh
-./gradlew test --tests MapExpertsTest      # unix
-gradlew.bat test --tests MapExpertsTest    # windows
+```
+./gradlew test --tests MapExpertsTest        # unix
+.\gradlew.bat test --tests MapExpertsTest    # windows
 ```
 
 
@@ -129,9 +129,9 @@ Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla e
 
 Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-pääohjelman joko koodieditorisi käyttöliittymän Run-painikkeella tai Gradle-työkalun avulla komentoriviltä:
 
-```sh
-./gradlew --quiet --console plain run       # unix
-gradlew.bat --quiet --console plain run     # windows
+```
+./gradlew --quiet --console plain run         # unix
+.\gradlew.bat --quiet --console plain run     # windows
 
 # -q, --quiet         Log errors only.
 # --console [plain]   Specifies which type of console output to generate.

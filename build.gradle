@@ -49,13 +49,11 @@ run {
 }
 
 tasks.named('test') {
-    // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 
     testLogging {
-        showExceptions true
-        showCauses true
-        events "PASSED", "FAILED"
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
         showStandardStreams true
     }
 }
