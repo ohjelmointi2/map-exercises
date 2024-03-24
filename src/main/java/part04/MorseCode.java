@@ -31,12 +31,13 @@ public class MorseCode {
     /**
      * Translates a string of morse code to text. The morse code is represented as
      * dots (.) and dashes (-). Characters are separated by a single space and words
-     * are separated by three spaces.
+     * are separated by three spaces. Characters a-z and 0-9 are supported.
      *
-     * Characters a-z and 0-9 are supported.
+     * For example, ".... . .-.. .-.. --- .-- --- .-. .-.. -.." translates to
+     * "hello world".
      *
      * @param morse the morse code to translate
-     * @return the translated text
+     * @return the translated text (in lower case)
      */
     public String morseToText(String morse) {
         return null;
@@ -49,6 +50,9 @@ public class MorseCode {
      *
      * Upper and lower case letters a-z and numbers 0-9 are supported. Other
      * characters are ignored.
+     *
+     * For example, "Hello World" translates to
+     * ".... . .-.. .-.. --- .-- --- .-. .-.. -..".
      *
      * @param text the text to translate
      * @return the translated morse code as a single string
