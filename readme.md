@@ -143,6 +143,21 @@ Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-p�
 🚀 *Gradle osaa suorittaa run-komennolla main-metodin oikeasta Java-luokasta, koska `PostalCodesMain` on määritetty [`build.gradle`](./build.gradle)-tiedostossa pääohjelmaksi.*
 
 
+## Bonustehtävä 4: [MorseCode.java](./src/main/java/part04/MorseCode.java) *(soveltaminen, 0 %)*
+
+Tämä on bonustehtävä, joka ei sisälly tehtävän arviointiin. Voit halutessasi toteuttaa [MorseCode-luokan](./src/main/java/part04/MorseCode.java) ja siihen liittyvän [MorseApp-luokan](./src/main/java/part04/MorseApp.java), tai voit jättää tämän tehtävän väliin.
+
+MorseCode-luokkaan on toteutettava kaksi metodia: `morseToText` ja `textToMorse`. Nämä metodit muuntavat merkkijonoja morsekoodista "normaaliksi" tekstiksi ja päinvastoin. MorseCode-luokalle on valmiit testit, jotka löytyvät [MorseCodeTest](./src/test/java/part04/MorseCodeTest.java)-luokasta. Lisätietoja morsekoodista löytyy esimerkiksi Wikipediasta: [https://en.wikipedia.org/wiki/Morse_code](https://en.wikipedia.org/wiki/Morse_code).
+
+Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
+
+```
+./gradlew test --tests MorseCodeTest        # unix
+.\gradlew.bat test --tests MorseCodeTest    # windows
+```
+
+---------
+
 ## Postinumeroaineiston tekijänoikeudet
 
 Tässä projektissa hyödynnettävä postinumeroaineisto [postcode_map_light.json](./data/postcode_map_light.json) on lainattu [https://github.com/theikkila/postinumerot](https://github.com/theikkila/postinumerot)-projektin [postcode_map_light.json](https://github.com/theikkila/postinumerot/blob/master/postcode_map_light.json)-tiedostosta 7.6.2023.
