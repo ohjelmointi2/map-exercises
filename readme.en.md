@@ -84,42 +84,45 @@ In a Java program, the Map data structure is excellent for handling the key-valu
 
 ### User interface
 
-Edellisistä tehtävistä poiketen tässä tehtävässä saat toteuttaa ratkaisun parhaaksi katsomallasi tavalla ja luoda parhaaksi katsomasi luokat ja metodit. Ohjelmasi on kuitenkin toimittava siten, että se käynnistyy `PostalCodesMain`-luokan main-metodista ja kysyy käyttäjältä ainoastaan yhden kysymyksen. Tulos täytyy myös tulostaa tehtävänannossa esitetyssä muodossa.
+Unlike the previous tasks, in this task you are free to implement the solution in the way you see fit and create the classes and methods you deem necessary. However, your program must work in such a way that it starts from the `PostalCodesMain` class's main method and asks the user only one question. The result must also be printed in the format specified in the task description.
 
-Toteuta siis [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luokkaan logiikka, joka hyödyntää [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokan `readPostalCodes`-metodia. Ohjelmasi tulee tulostaa tilanteesta riippuen joko käyttäjän syöttämää postinumeroa vastaavan postitoimipaikan nimen tai nimeä vastaavat postinumerot.
+Therefore, implement the logic in the [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java) class, which utilizes the `readPostalCodes` method from the [PostalCodes](./src/main/java/part03/PostalCodes.java) class. Depending on the situation, your program should print either the name of the post office corresponding to the postal code entered by the user or the postal codes corresponding to the name.
 
-**Postinumero (15 %)**
+**Postal code (15 %)**
 
-Käyttäjä saattaa siis syöttää numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
-
-```
-Mitä etsitään (esim. 00100 tai Helsinki)? 00100
-
-Toimipaikka: HELSINKI
-
-[ ohjelman suoritus päättyy ]
-```
-
-Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
-
-💡 *Huomaa, että automaattisen arvioinnin vuoksi ohjelman tulee kysyä vain yksi syöte, tulostaa vastaus ja lopettaa.*
-
-**Toimipaikan nimi (15 %)**
-
-Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
+The user might enter a number, in which case the program will search for the corresponding post office name:
 
 ```
-Mitä etsitään (esim. 00100 tai Helsinki)? Porvoo
+What are you looking for (e.g. 00100 or Helsinki)? 00100
 
-Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
+Post office: HELSINKI
 
-[ ohjelman suoritus päättyy ]
+[ end of execution ]
+```
+
+In the example above, the user entered the input `00100` and the program printed the name `HELSINKI`. If the postal code is not found in the data, print the text "Postal code not found."
+
+💡 *Note that due to automatic evaluation, the program should only ask for one input, print the response, and then terminate.*
+
+**Name of the post office (15 %)**
+
+If the user enters the name of a post office, the program should print all postal codes that belong to that post office:
+
+```
+What are you looking for (e.g. 00100 or Helsinki)? Porvoo
+
+Postal codes: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
+
+[ end of execution ]
 ```
 
 Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
 
 Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna**, joten kerää postinumerot ensin esimerkiksi listalle, jonka [järjestät](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List)) ennen tulostamista.
 
+In this example, the user entered the text `Porvoo` and the program printed the postal codes for Porvoo. If no postal codes are found for the given name, print "Postal codes not found.". Your program should find the postal codes regardless of the case of the input name.
+
+In the output, **the postal codes must be in ascending order, separated by commas**, so first collect the postal codes in a list, which you then [sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List) before printing.
 
 ### Ohjelman suorittaminen
 
