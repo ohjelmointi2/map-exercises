@@ -62,9 +62,9 @@ As in the previous task, you can test your code using your own `main` method or 
 ```
 
 
-## Tehtävä 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) *(soveltaminen, 15 % + 15 %)*
+## Exercise 3: [PostalCodesMain.java](./src/main/java/part03/PostalCodesMain.java) *(applying, 15 % + 15 %)*
 
-Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan käsittelyssä. [JSON (JavaScript Object Notation)](https://www.json.org/) on kevyt ja yleinen tapa tallentaa ja siirtää tietoa ohjelmien välillä. JSON-muotoista dataa voidaan käyttää monissa erilaisissa sovelluksissa, kuten verkkopalvelimissa, mobiilisovelluksissa ja tietokantojen kanssa työskennellessä. JSON-muotoinen data voi näyttää esim. seuraavalta:
+Computer programs often use the JSON file format for handling structured data. [JSON (JavaScript Object Notation)](https://www.json.org/) is a lightweight and common way to store and transfer information between programs. JSON-formatted data can be used in many different applications, such as web servers, mobile applications, and working with databases. JSON-formatted data might look like this, for example:
 
 ```json
 {
@@ -76,14 +76,13 @@ Tietokoneohjelmat käyttävät usein JSON-tiedostomuotoa rakenteellisen datan k�
 }
 ```
 
-Java-ohjelmassa Map-tietorakenne soveltuu erinomaisesti yllä esitettyjen avain-arvo-parien käsittelemiseen. Tässä tehtävässä keskitymme postinumeroaineiston käsittelyyn, joka on tallennettu [JSON-muotoiseen tiedostoon nimeltä *postcode_map_light.json*](./data/postcode_map_light.json).
+In a Java program, the Map data structure is excellent for handling the key-value pairs shown above. In this task, we will focus on processing postal code data stored in a [JSON file named *postcode_map_light.json*](./data/postcode_map_light.json).
 
-💡 *JSON-tiedoston lukemiseen Java-ohjelmassa käytämme tässä tehtävässä Googlen julkaisemaa [GSON-kirjastoa](https://github.com/google/gson). GSON mahdollistaa JSON-datan muuntamisen Java-olioiksi ja päinvastoin. JSON-tiedoston käsittely on toteutettu valmiiksi [PostalCodes](./src/main/java/part03/PostalCodes.java)-luokassa. Sinun ei tarvitse perehtyä GSON:in yksityiskohtiin tai käyttää sitä itse.*
+💡 *To read the JSON file in a Java program, we will use Google's GSON library in this task. [GSON](https://github.com/google/gson) allows converting JSON data to Java objects and vice versa. The handling of the JSON file has been pre-implemented in the [PostalCodes](./src/main/java/part03/PostalCodes.java) class. You do not need to delve into the details of GSON or use it yourself.*
 
-🚀 *GSON ei ole osa Javan standardikirjastoa, vaan se on lisätty tähän projektiin Gradle-työkalun avulla. Tutki [`build.gradle`](./build.gradle)-tiedostoa, löydätkö miten ja mihin GSON on määritetty?*
+🚀 *GSON is not part of the Java standard library; it has been added to this project using the Gradle tool. Examine the [`build.gradle`](./build.gradle) file to find out how and where GSON is specified.*
 
-
-### Käyttöliittymä
+### User interface
 
 Edellisistä tehtävistä poiketen tässä tehtävässä saat toteuttaa ratkaisun parhaaksi katsomallasi tavalla ja luoda parhaaksi katsomasi luokat ja metodit. Ohjelmasi on kuitenkin toimittava siten, että se käynnistyy `PostalCodesMain`-luokan main-metodista ja kysyy käyttäjältä ainoastaan yhden kysymyksen. Tulos täytyy myös tulostaa tehtävänannossa esitetyssä muodossa.
 
