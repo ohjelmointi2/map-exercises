@@ -176,15 +176,12 @@ The postal code data used in this project [postcode_map_light.json](./data/postc
 
 The copyright of the data belongs to Posti and it is used in accordance with [Posti's terms of use](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). If you make copies of this material, ensure compliance with [the terms of use](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot).
 
-## Ohjelmoinnin MOOC
+## Programming MOOC
 
-`MapExperts`-luokan metodeissa on otettu vahvasti vaikutteita Helsingin yliopiston Ohjelmoinnin perusteet -MOOC-kurssin Python-kielisistä tehtävistä osoitteessa https://ohjelmointi-23.mooc.fi/osa-5. Ohjelmoinnin MOOC on lisensoitu CC BY-NC-SA 4.0 -lisenssillä:
+The methods in the `MapExperts` class are heavily influenced by the Python exercises from the University of Helsinki's Programming Basics MOOC course at https://ohjelmointi-23.mooc.fi/osa-5. The Programming MOOC is licensed under the CC BY-NC-SA 4.0 license.
 
-> *Kurssimateriaalin ja tehtävien tekijät ovat Erkki Kaila, Antti Laaksonen ja Matti Luukkainen. Muutama kurssin tehtävistä on Arto Hellaksen (né Vihavainen) käsialaa.*
->
-> *Kurssin materiaali on lisensoitu [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi) -lisenssillä, joten voit käyttää ja levittää sitä vapaasti, kunhan alkuperäisten tekijöiden nimiä ei poisteta. Jos teet muutoksia materiaaliin ja haluat levittää muunneltua versiota, se täytyy lisensoida samalla lisenssillä. Materiaalien käyttö kaupalliseen tarkoitukseen on ilman erillistä lupaa kielletty.*
+## License and authors
 
+This exercise is made by Teemu Havulinna and translated to English by Kalle Ilves and it is licensed under a [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Tämän tehtävän tekijänoikeudet
-
-Tämän tehtävän on kehittänyt Teemu Havulinna ja se on lisensoitu [Creative Commons BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) -lisenssillä. Tehtävänannon, tehtäväpohjien ja automaattisten testien luonnissa on hyödynnetty ChatGPT 3.5 -kielimallia sekä GitHub Copilot -tekoälytyökalua.
+ChatGPT 3.5 language model and GitHub copilot AI assistant has been used to implement the exercise.
