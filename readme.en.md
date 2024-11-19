@@ -116,17 +116,13 @@ Postal codes: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 [ end of execution ]
 ```
 
-Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
-
-Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna**, joten kerää postinumerot ensin esimerkiksi listalle, jonka [järjestät](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List)) ennen tulostamista.
-
 In this example, the user entered the text `Porvoo` and the program printed the postal codes for Porvoo. If no postal codes are found for the given name, print "Postal codes not found.". Your program should find the postal codes regardless of the case of the input name.
 
 In the output, **the postal codes must be in ascending order, separated by commas**, so first collect the postal codes in a list, which you then [sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List) before printing.
 
-### Ohjelman suorittaminen
+### Running the program
 
-Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-pääohjelman joko koodieditorisi käyttöliittymän Run-painikkeella tai Gradle-työkalun avulla komentoriviltä:
+You can run the [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java) main program either using the Run button in your code editor's interface or with the Gradle tool from the command line:
 
 ```
 ./gradlew --quiet --console plain run         # unix
@@ -137,21 +133,21 @@ Voit suorittaa [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-p�
 #                     Values are 'plain', 'auto' (default), 'rich' or 'verbose'.
 ```
 
-💡 *Ensimmäisellä suorituskerralla suoritus saattaa olla hyvin hidas, mutta [suoritus nopeutuu seuraavilla kerroilla Gradlen välimuistin ansiosta](https://docs.gradle.org/current/userguide/build_cache.html). Voit myös vaihtoehtoisesti suorittaa ohjelmasi käyttämäsi koodieditorin "run"-painikkeella.*
+💡 *The first run might be very slow, but [subsequent runs will be faster thanks to Gradle's build cache](https://docs.gradle.org/current/userguide/build_cache.html). Alternatively, you can run your program using the "run" button in your code editor.*
 
-🚀 *Gradle osaa suorittaa run-komennolla main-metodin oikeasta Java-luokasta, koska `PostalCodesMain` on määritetty [`build.gradle`](./build.gradle)-tiedostossa pääohjelmaksi.*
+🚀 *Gradle can execute the main method from the correct Java class using the run command because `PostalCodesMain` is specified as the main program in the [`build.gradle`](./build.gradle) file.*
 
+### Testing the exercise
 
-### Tehtävän testaaminen
+These postal code tasks are tested through the user interface, so unlike previous tasks, there are no pre-written unit tests for them. Therefore, you need to test the functionality of your solution yourself by running the program's `main` method and checking its output. The provided [PostalCodesTest](./src/test/java/part03/PostalCodesTest.java) class only verifies that the [pre-written code for reading postal codes from files](./src/main/java/part03/PostalCodes.java) works correctly, but it does not test the main program you implemented.
 
-Nämä postinumerotehtävät testataan käyttöliittymän kautta, joten niille ei ole aikaisemmista tehtävistä poiketen valmiita yksikkötestejä. Sinun on siis testattava ratkaisusi toimivuus itse suorittamalla ohjelman `main`-metodia ja tarkastamalla sen antamat tulokset. Valmis [PostalCodesTest](./src/test/java/part03/PostalCodesTest.java)-luokka tarkastaa vain, että [valmiiksi annettu koodi postinumeroiden lukemiseksi tiedostoista](./src/main/java/part03/PostalCodes.java) toimii kuten pitääkin, mutta se ei testaa toteuttamaasi pääohjelmaa.
-
-
-## Bonustehtävä 4: [MorseCode.java](./src/main/java/part04/MorseCode.java) *(soveltaminen, 0 %)*
-
-Tämä on bonustehtävä, joka ei sisälly tehtävän arviointiin. Voit halutessasi toteuttaa [MorseCode-luokan](./src/main/java/part04/MorseCode.java) ja siihen liittyvän [MorseApp-luokan](./src/main/java/part04/MorseApp.java), tai voit jättää tämän tehtävän väliin.
+## Bonus exercise 4: [MorseCode.java](./src/main/java/part04/MorseCode.java) *(applying, 0 %)*
 
 MorseCode-luokkaan on toteutettava kaksi metodia: `morseToText` ja `textToMorse`. Nämä metodit muuntavat merkkijonoja morsekoodista "normaaliksi" tekstiksi ja päinvastoin:
+
+This is a bonus task that is not included in the task evaluation. You can choose to implement the [MorseCode-luokan](./src/main/java/part04/MorseCode.java) class and the related [MorseApp](./src/main/java/part04/MorseApp.java) class, or you can skip this task.
+
+The MorseCode class should implement two methods: `morseToText` and `textToMorse`. These methods convert strings from Morse code to "normal" text and vice versa:
 
 ```
 hello world
@@ -162,6 +158,11 @@ Lisätietoja morsekoodista löytyy esimerkiksi Wikipediasta: [https://en.wikiped
 
 MorseCode-luokalle on valmiit testit, jotka löytyvät [MorseCodeTest](./src/test/java/part04/MorseCodeTest.java)-luokasta. Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
 
+More information about Morse code can be found, for example, on Wikipedia: <https://en.wikipedia.org/wiki/Morse_code>.
+
+There are ready-made tests for the MorseCode class, which can be found in the [MorseCodeTest](./src/test/java/part04/MorseCodeTest.java) class. You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
+
+
 ```
 ./gradlew test --tests MorseCodeTest        # unix
 .\gradlew.bat test --tests MorseCodeTest    # windows
@@ -169,12 +170,11 @@ MorseCode-luokalle on valmiit testit, jotka löytyvät [MorseCodeTest](./src/tes
 
 ---------
 
-## Postinumeroaineiston tekijänoikeudet
+## Copyrights of the postal code data
 
-Tässä projektissa hyödynnettävä postinumeroaineisto [postcode_map_light.json](./data/postcode_map_light.json) on lainattu [https://github.com/theikkila/postinumerot](https://github.com/theikkila/postinumerot)-projektin [postcode_map_light.json](https://github.com/theikkila/postinumerot/blob/master/postcode_map_light.json)-tiedostosta 7.6.2023.
+The postal code data used in this project [postcode_map_light.json](./data/postcode_map_light.json) is borrowed from the <https://github.com/theikkila/postinumerot> project's [postcode_map_light.json](https://github.com/theikkila/postinumerot/blob/master/postcode_map_light.json) file dated 7.6.2023.
 
-Datan tekijänoikeudet kuuluvat Postille ja niitä käytetään [Postin käyttöehtojen mukaisesti](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). Mikäli teet kopioita tästä aineistosta, huolehdi [käyttöehtojen](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot) noudattamisesta.
-
+The copyright of the data belongs to Posti and it is used in accordance with [Posti's terms of use](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot). If you make copies of this material, ensure compliance with [the terms of use](https://www.posti.fi/fi/asiakastuki/postinumerotiedostot).
 
 ## Ohjelmoinnin MOOC
 
