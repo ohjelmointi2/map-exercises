@@ -46,10 +46,9 @@ You can run the tests either using your code editor's testing tool ([VS Code](ht
 
 💡 *You do not need to familiarize yourself with the technical implementation of the actual test. At this stage, it is sufficient to run the tests and review any error messages they may produce.*
 
-🚀 *Huomaa, että monet tämän luokan metodit eivät ole riippuvaisia käytettävän Map-tietorakenteen tyypistä. Esimerkiksi `countEntries`-metodi voisi toimia yhtä hyvin `<String, String>`- kuin `<String, Integer>`-tyyppisten avainten ja arvojen kanssa. Oikeassa ohjelmassa käyttäisit todennäköisesti geneerisiä tyyppejä, kuten `Map<K, V>`. Tässä tehtävässä ei tarvitse erikseen perehtyä geneerisiin tyyppeihin, mutta voit halutessasi tutustua aiheeseen itsenäisesti ja toteuttaa metodit geneerisinä. Katso lisätietoja tutoriaalista: https://dev.java/learn/generics/.*
+🚀 *Note that many methods in this class are not dependent on the type of Map data structure used. For example, the `countEntries` method could work equally well with `<String, String>` as with `<String, Integer>` types of keys and values. In a real program, you would likely use generic types, such as `Map<K, V>`. In this task, you do not need to specifically study generic types, but you can explore the topic independently and implement the methods generically if you wish. For more information, see the tutorial: https://dev.java/learn/generics/.*
 
-
-## Tehtävä 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) *(soveltaminen, 30 %)*
+## Exercise 2: [MapExperts.java](./src/main/java/part02/MapExperts.java) *(applying, 30 %)*
 
 Tässä tehtävässä jatkamme `Map`-operaatioita soveltavien tehtävien muodossa. Tehtävät ovat luonteeltaan haastavampia ja edellyttävät myös laajempaa ongelmanratkaisua kuin yksittäisen metodin käyttöä.
 
