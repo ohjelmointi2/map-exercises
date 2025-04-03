@@ -118,7 +118,7 @@ Postal codes: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 
 In this example, the user entered the text `Porvoo` and the program printed the postal codes for Porvoo. If no postal codes are found for the given name, print "Postal codes not found.". Your program should find the postal codes regardless of the case of the input name.
 
-In the output, **the postal codes must be in ascending order, separated by commas**, so first collect the postal codes in a list, which you then [sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List) before printing.
+In the output, **the postal codes must be in ascending order, separated by commas**, so first collect the postal codes in a list, which you then [sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List)) before printing.
 
 ### Running the program
 
