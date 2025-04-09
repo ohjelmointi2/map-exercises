@@ -15,7 +15,7 @@ public class MapBasicsTest {
     private static final Map<String, String> ips = Map.of(
             "home", "127.0.0.1",
             "google", "8.8.8.8",
-            "cloudfare", "1.1.1.1");
+            "cloudflare", "1.1.1.1");
 
     private static final Map<String, String> hexColors = Map.of(
             "red", "#ff0000",
@@ -62,8 +62,8 @@ public class MapBasicsTest {
     void testGetValue() {
         assertEquals("127.0.0.1", mapBasics.getValue(ips, "home"));
         assertEquals("8.8.8.8", mapBasics.getValue(ips, "google"));
-        assertEquals("1.1.1.1", mapBasics.getValue(ips, "cloudfare"));
-        assertEquals(null, mapBasics.getValue(ips, "unknonw"));
+        assertEquals("1.1.1.1", mapBasics.getValue(ips, "cloudflare"));
+        assertEquals(null, mapBasics.getValue(ips, "unknown"));
     }
 
     @Test
