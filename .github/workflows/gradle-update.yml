@@ -69,7 +69,7 @@ jobs:
         if: runner.os == 'Windows'
         run: .\gradlew.bat build -x test --warning-mode=fail
 
-      - name: Build on Linux and MacOs (skip tests for completed assignment)
+      - name: Build on Linux (skip tests for completed assignment)
         if: runner.os != 'Windows'
         run: ./gradlew build -x test --warning-mode=fail
 
