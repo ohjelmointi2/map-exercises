@@ -13,7 +13,7 @@ public class PostalCodesMain {
      * in both directions. For example, if the user enters "00100", the program
      * should print "Helsinki". If the user enters "Helsinki" as their input, the
      * program should print "00100" along with all other postal codes for
-     * Helsinki.
+     * Helsinki in ascending order.
      *
      * The program should not handle partial matches. For example, if the user
      * enters "001", the program should not display any results. However, the
@@ -25,7 +25,8 @@ public class PostalCodesMain {
          * This map contains data that is read from the JSON file. You don't need to
          * inspect the file handling in this exercise, but you can if you want to.
          *
-         * The keys in the map are postal codes and the values are postal district names.
+         * The keys in the map are postal codes and the values are postal district
+         * names.
          */
         Map<String, String> postalCodes = PostalCodes.readPostalCodes();
 
