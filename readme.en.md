@@ -78,7 +78,7 @@ Computer programs often use the JSON file format for handling structured data. [
 
 In a Java program, the Map data structure is excellent for handling the key-value pairs shown above. In this task, we will focus on processing postal code data stored in a [JSON file named *postcode_map_light.json*](./data/postcode_map_light.json).
 
-💡 *To read the JSON file in a Java program, we will use Google's GSON library in this task. [GSON](https://github.com/google/gson) allows converting JSON data to Java objects and vice versa. The handling of the JSON file has been pre-implemented in the [PostalCodes](./src/main/java/part03/PostalCodes.java) class. You do not need to delve into the details of GSON or use it yourself.*
+💡 *To read the JSON file in a Java program, we will use Google's GSON library in this task. [GSON](https://github.com/google/gson) allows converting JSON data to Java objects and vice versa. The handling of the JSON file has been pre-implemented in the [PostalCodesReader](./src/main/java/part03/PostalCodesReader.java) class. You do not need to delve into the details of GSON or use it yourself.*
 
 🚀 *GSON is not part of the Java standard library; it has been added to this project using the Gradle tool. Examine the [`build.gradle`](./build.gradle) file to find out how and where GSON is specified.*
 
@@ -86,7 +86,7 @@ In a Java program, the Map data structure is excellent for handling the key-valu
 
 Unlike the previous tasks, in this task you are free to implement the solution in the way you see fit and create the classes and methods you deem necessary. However, your program must work in such a way that it starts from the `PostalCodesMain` class's main method and asks the user only one question. The result must also be printed in the format specified in the task description.
 
-Therefore, implement the logic in the [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java) class, which utilizes the `readPostalCodes` method from the [PostalCodes](./src/main/java/part03/PostalCodes.java) class. Depending on the situation, your program should print either the name of the post office corresponding to the postal code entered by the user or the postal codes corresponding to the name.
+Therefore, implement the logic in the [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java) class, which utilizes the `readPostalCodes` method from the [PostalCodesReader](./src/main/java/part03/PostalCodesReader.java) class. Depending on the situation, your program should print either the name of the post office corresponding to the postal code entered by the user or the postal codes corresponding to the name.
 
 **Postal code (15 %)**
 
@@ -139,7 +139,7 @@ You can run the [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java) m
 
 ### Testing the exercise
 
-These postal code tasks are tested through the user interface, so unlike previous tasks, there are no pre-written unit tests for them. Therefore, you need to test the functionality of your solution yourself by running the program's `main` method and checking its output. The provided [PostalCodesTest](./src/test/java/part03/PostalCodesTest.java) class only verifies that the [pre-written code for reading postal codes from files](./src/main/java/part03/PostalCodes.java) works correctly, but it does not test the main program you implemented.
+These postal code tasks are tested through the user interface, so unlike previous tasks, there are no pre-written unit tests for them. Therefore, you need to test the functionality of your solution yourself by running the program's `main` method and checking its output. The provided [PostalCodesReaderTest](./src/test/java/part03/PostalCodesReaderTest.java) class only verifies that the [pre-written code for reading postal codes from files](./src/main/java/part03/PostalCodesReader.java) works correctly, but it does not test the main program you implemented.
 
 ## Bonus exercise 4: [MorseCode.java](./src/main/java/part04/MorseCode.java) *(applying, 0 %)*
 

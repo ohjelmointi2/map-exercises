@@ -3,6 +3,14 @@ package part03;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * This part of the exercise is tested manually through the user interface, not
+ * with unit tests.
+ *
+ * Test the functionality of your solution by running the `main` method, giving
+ * inputs and checking the outputs.
+ */
+
 public class PostalCodesMain {
 
     /**
@@ -28,7 +36,7 @@ public class PostalCodesMain {
          * The keys in the map are postal codes and the values are postal district
          * names.
          */
-        Map<String, String> postalCodes = PostalCodes.readPostalCodes();
+        Map<String, String> postalCodes = PostalCodesReader.readPostalCodes();
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Mitä etsitään (esim. 00100 tai Helsinki)? ");

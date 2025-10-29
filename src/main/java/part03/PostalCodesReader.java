@@ -12,9 +12,9 @@ import com.google.gson.reflect.TypeToken;
 
 /**
  * This class reads the postal codes from a JSON file and returns them as a
- * Map from postal code to postal district name.
+ * Map. In the map, postal code are keys and names are values.
  */
-public class PostalCodes {
+public class PostalCodesReader {
 
     // The path to the JSON file containing the postal codes.
     private static final Path jsonFilePath = Path.of("data", "postcode_map_light.json");
