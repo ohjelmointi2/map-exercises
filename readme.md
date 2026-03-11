@@ -97,17 +97,17 @@ Toteuta siis [PostalCodesMain](./src/main/java/part03/PostalCodesMain.java)-luok
 
 **Postinumero (15 %)**
 
-Käyttäjä saattaa siis syöttää numeron, jolloin ohjelma etsii sitä vastaavan toimipaikan nimen:
+Käyttäjä saattaa siis syöttää numeron, jolloin ohjelma etsii ja tulostaa sitä vastaavan toimipaikan nimen:
 
 ```
-Mitä etsitään (esim. 00100 tai Helsinki)? 00100
+Input postal code or district (e.g., 00100 or Helsinki): 00100
 
-Toimipaikka: HELSINKI
+Post office: HELSINKI
 
 [ ohjelman suoritus päättyy ]
 ```
 
-Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta teksti "Postinumeroa ei löytynyt."
+Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulosti nimen `HELSINKI`. Mikäli postinumeroa ei löydy aineistosta, tulosta esimerkiksi teksti "Post office not found."
 
 💡 *Huomaa, että automaattisen arvioinnin vuoksi ohjelman tulee kysyä vain yksi syöte, tulostaa vastaus ja lopettaa.*
 
@@ -116,14 +116,14 @@ Yllä olevassa esimerkissä käyttäjä antoi syötteen `00100` ja ohjelma tulos
 Jos käyttäjä syöttää toimipaikan nimen, ohjelman tulee tulostaa kaikki postinumerot, jotka kuuluvat kyseiseen postitoimipaikkaan:
 
 ```
-Mitä etsitään (esim. 00100 tai Helsinki)? Porvoo
+Input postal code or district (e.g., 00100 or Helsinki): Porvoo
 
-Postinumerot: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
+Postal codes: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 
 [ ohjelman suoritus päättyy ]
 ```
 
-Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta "Postinumeroita ei löytynyt." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
+Tässä esimerkissä käyttäjä syötti tekstin `Porvoo` ja ohjelma tulosti Porvoon postinumerot. Mikäli annetulle nimelle ei löydy lainkaan postinumeroita, tulosta esimerkiksi teksti "Postal codes not found." Ohjelmasi tulee löytää postinumerot riippumatta syötetyn nimen kirjainkoosta.
 
 Tulosteessa **postinumeroiden tulee olla kasvavassa järjestyksessä pilkuilla eroteltuna**, joten kerää postinumerot ensin esimerkiksi listalle, jonka [järjestät](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html#sort(java.util.List)) ennen tulostamista.
 

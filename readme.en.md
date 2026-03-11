@@ -93,7 +93,7 @@ Therefore, implement the logic in the [PostalCodesMain](./src/main/java/part03/P
 The user might enter a number, in which case the program will search for the corresponding post office name:
 
 ```
-What are you looking for (e.g. 00100 or Helsinki)? 00100
+Input postal code or district (e.g., 00100 or Helsinki): 00100
 
 Post office: HELSINKI
 
@@ -109,7 +109,7 @@ In the example above, the user entered the input `00100` and the program printed
 If the user enters the name of a post office, the program should print all postal codes that belong to that post office:
 
 ```
-What are you looking for (e.g. 00100 or Helsinki)? Porvoo
+Input postal code or district (e.g., 00100 or Helsinki): Porvoo
 
 Postal codes: 06100, 06101, 06150, 06151, 06200, 06400, 06401, 06450, 06500
 
