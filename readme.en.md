@@ -12,7 +12,7 @@ The task consists of several parts, each of which will be evaluated separately u
 
 ## Starting the exercise
 
-Start by cloning the Git repository to your local machine. The exercise must be done in your own copy, so make sure the repository URL includes your GitHub username! You can create your own copy through the GitHub Classroom link provided in your course assignment.
+Start by cloning the Git repository to your local machine. The exercise must be done in your own copy, so make sure the repository URL includes your GitHub username!
 
 ```sh
 git clone https://github.com/make-sure-that-the-repository-address-contains-your-account.git
@@ -24,9 +24,8 @@ After cloning the project to your local machine, open it in your code editor.
 
 Once you have solved some or all of the tasks and committed your answers, submit the solutions for evaluation using the `git push` command. Git push will automatically trigger a GitHub Actions workflow that compiles and tests your solutions, providing a pass or fail result for each test.
 
-Once the GitHub Actions has executed your code, you see the results in your GitHub repository's [Actions tab](../../actions/workflows/classroom.yml). It usually takes a few minutes for the assesment to be completed. 
+Once the GitHub Actions has executed your code, you see the results in your GitHub repository's actions tab. It usually takes a few minutes for the assesment to be completed.
 
-By clicking on the latest *"GitHub Classroom Workflow"* execution from the link above, you will get detailed information about the task evaluation. At the bottom of the page, you can see the points you received. By clicking on the "Autograding" heading, you can view the steps performed during the evaluation and their results in more detail. You can find an illustrated guide on this topic in the GitHub documentation [View autograding results (github.com)](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results).
 
 ## Exercise 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) *(basics, 40 %)*
 
@@ -34,15 +33,16 @@ In this task, we will practice creating a new `Map` object and performing the mo
 
 The Java class to be coded in this task, [MapBasics](./src/main/java/part01/MapBasics.java), consists of predefined methods with Javadoc comments explaining how each method should function. **Your task is to read the comments and implement the method content to match the method name and description.**
 
-You can test your code using your own `main` method, or you can utilize the provided JUnit unit tests for the task, which can be found in the [MapBasicsTest](./src/test/java/part01/MapBasicsTest.java) class. 
-You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
+You can test your code using your own `main` method, or you can utilize the provided JUnit unit tests for the task, which can be found in the [MapBasicsTest](./src/test/java/part01/MapBasicsTest.java) class.
+
+You can run the tests either using your [code editor's testing tool](https://code.visualstudio.com/docs/java/java-testing) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
 
 ```
 ./gradlew test --tests MapBasicsTest        # unix
 .\gradlew.bat test --tests MapBasicsTest    # windows
 ```
 
-💡 *If the tests do not pass, try running the command again with the `--info` argument at the end. This will give you more detailed information about what went wrong in the test. Alternatively, you can run the tests using the testing tool in your code editor ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)), which typically displays errors clearly.*
+💡 *If the tests do not pass, try running the command again with the `--info` argument at the end. This will give you more detailed information about what went wrong in the test. Alternatively, you can run the tests using [the testing tool in your code editor](https://code.visualstudio.com/docs/java/java-testing), which typically displays errors clearly.*
 
 💡 *You do not need to familiarize yourself with the technical implementation of the actual test. At this stage, it is sufficient to run the tests and review any error messages they may produce.*
 
@@ -54,7 +54,7 @@ In this task, we continue with exercises that apply `Map` operations. The tasks 
 
 As in the previous task, [MapExperts.java](./src/main/java/part02/MapExperts.java) also consists of predefined methods with Javadoc comments explaining how each method should function. **Your task is to read the comments and implement the method content to match the method name and description.**
 
-As in the previous task, you can test your code using your own `main` method or the provided JUnit unit tests. The tests can be found in the [MapExpertsTest](./src/test/java/part02/MapExpertsTest.java) class. You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
+As in the previous task, you can test your code using your own `main` method or the provided JUnit unit tests. The tests can be found in the [MapExpertsTest](./src/test/java/part02/MapExpertsTest.java) class. You can run the tests either using your [code editor's testing tool](https://code.visualstudio.com/docs/java/java-testing) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
 
 ```
 ./gradlew test --tests MapExpertsTest        # unix
@@ -154,13 +154,9 @@ hello world
 .... . .-.. .-.. ---   .-- --- .-. .-.. -..
 ```
 
-Lisätietoja morsekoodista löytyy esimerkiksi Wikipediasta: [https://en.wikipedia.org/wiki/Morse_code](https://en.wikipedia.org/wiki/Morse_code).
-
-MorseCode-luokalle on valmiit testit, jotka löytyvät [MorseCodeTest](./src/test/java/part04/MorseCodeTest.java)-luokasta. Voit suorittaa testit koodieditorisi testaustyökalulla ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) tai [Gradle-automaatiotyökalulla](https://docs.gradle.org/current/userguide/java_testing.html):
-
 More information about Morse code can be found, for example, on Wikipedia: <https://en.wikipedia.org/wiki/Morse_code>.
 
-There are ready-made tests for the MorseCode class, which can be found in the [MorseCodeTest](./src/test/java/part04/MorseCodeTest.java) class. You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
+There are ready-made tests for the MorseCode class, which can be found in the [MorseCodeTest](./src/test/java/part04/MorseCodeTest.java) class. You can run the tests either using your [code editor's testing tool](https://code.visualstudio.com/docs/java/java-testing) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
 
 
 ```
