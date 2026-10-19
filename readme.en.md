@@ -24,7 +24,7 @@ After cloning the project to your local machine, open it in your code editor.
 
 Once you have solved some or all of the tasks and committed your answers, submit the solutions for evaluation using the `git push` command. Git push will automatically trigger a GitHub Actions workflow that compiles and tests your solutions, providing a pass or fail result for each test.
 
-Once the GitHub Actions has executed your code, you see the results in your GitHub repository's actions tab. It usually takes a few minutes for the assesment to be completed.
+Once the GitHub Actions has executed your code, you see the results in your GitHub repository's actions tab. It usually takes a few minutes for the assessment to be completed.
 
 
 ## Exercise 1: [MapBasics.java](./src/main/java/part01/MapBasics.java) *(basics, 40 %)*
